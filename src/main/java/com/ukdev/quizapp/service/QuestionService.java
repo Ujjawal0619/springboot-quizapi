@@ -1,6 +1,6 @@
 package com.ukdev.quizapp.service;
 
-import com.ukdev.quizapp.Question;
+import com.ukdev.quizapp.modal.Question;
 import com.ukdev.quizapp.dao.QuestionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package com.ukdev.quizapp.controller;
 
 import com.ukdev.quizapp.service.QuestionService;
-import com.ukdev.quizapp.Question;
+import com.ukdev.quizapp.modal.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +20,12 @@ public class QuestionController {
     }
 
     @GetMapping("category/{category}")
-    public List<Question> getQuestionByCategory(@PathVariable String category) {
+    public ResponseEntity<List<Question>> getQuestionByCategory(@PathVariable String category) {
         return questionService.getQuestionsByCategory(category);
     }
 
     @PostMapping("add")
-    public String addQuestion(@RequestBody Question question) {
+    public ResponseEntity<String> addQuestion(@RequestBody Question question) {
         return questionService.addQuestion(question);
     }
 }
